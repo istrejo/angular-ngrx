@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { itemsReducer } from './state/reducers/items.reducers';
+import { ROOT_REDUCERS } from './state/app.state';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +15,7 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ name: 'TEST' }),
   ],
   providers: [],
